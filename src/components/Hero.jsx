@@ -664,8 +664,8 @@ const Hero = () => {
             <a href="#projects" className="btn-primary">
               View My Work
             </a>
-            <a href="/Subrata Ghosh - Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-secondary">
-              Download Resume
+            <a href="https://subrata0ghosh.github.io/cv-project/" target="_blank" rel="noopener noreferrer" className="btn-secondary">
+              View Resume
             </a>
           </motion.div>
         </motion.div>

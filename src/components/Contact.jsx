@@ -251,6 +251,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     company: '',
     projectType: '',
     budget: '',
@@ -287,11 +288,13 @@ const Contact = () => {
       const emailData = {
         from_name: formData.name,
         from_email: formData.email,
+        phone: formData.phone || 'Not provided',
         company: formData.company || 'Not specified',
         project_type: formData.projectType,
         budget: formData.budget,
         timeline: formData.timeline,
         message: formData.message,
+        time: new Date().toLocaleString(),
         to_email: 'technorchid.dev@gmail.com'
       }
 
@@ -303,6 +306,7 @@ const Contact = () => {
       setFormData({
         name: '',
         email: '',
+        phone: '',
         company: '',
         projectType: '',
         budget: '',
@@ -321,9 +325,15 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <FaEnvelope />,
-      label: 'Email',
+      label: 'Personal Email',
       value: 'subrataghosh6799@gmail.com',
       href: 'mailto:subrataghosh6799@gmail.com'
+    },
+    {
+      icon: <FaEnvelope />,
+      label: 'Business Email',
+      value: 'technorchid.dev@gmail.com',
+      href: 'mailto:technorchid.dev@gmail.com'
     },
     {
       icon: <FaPhone />,
@@ -386,6 +396,37 @@ const Contact = () => {
                   required
                   className="w-full px-4 py-3 sm:py-4 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white placeholder-gray-400 text-base"
                   placeholder="Your Name"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 sm:py-4 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white placeholder-gray-400 text-base"
+                  placeholder="your.email@example.com"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 sm:py-4 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white placeholder-gray-400 text-base"
+                  placeholder="+1 (555) 123-4567"
                 />
               </div>
 
@@ -608,7 +649,7 @@ const Contact = () => {
                   <span className="text-xs text-gray-400 group-hover:text-primary-400">Upwork</span>
                 </a>
                 <a
-                  href="/Subrata Ghosh - Resume.pdf"
+                  href="https://subrata0ghosh.github.io/cv-project/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col items-center p-2 lg:p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all group"

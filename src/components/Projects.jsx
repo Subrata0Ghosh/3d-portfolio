@@ -155,7 +155,7 @@ const ProjectCard = ({ project, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="group relative bg-gray-800/50 backdrop-blur-glass rounded-xl overflow-hidden border border-gray-700 hover:border-primary-500/50 transition-all duration-300 cursor-pointer"
+      className="group relative bg-gray-800/50 backdrop-blur-glass rounded-xl overflow-hidden border border-gray-700 hover:border-primary-500/50 hover:shadow-2xl hover:shadow-primary-500/20 transition-all duration-500 cursor-pointer hover:-translate-y-2"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleCardClick}
